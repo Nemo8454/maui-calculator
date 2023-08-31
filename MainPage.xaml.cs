@@ -12,10 +12,7 @@ namespace CalcMaui
             InitializeComponent();
         }
 
-        public void test()
-        {
 
-        }
 
         #region "录入运算符,及"%"和".""
         private void btnNumber_Clicked(object sender, EventArgs e)
