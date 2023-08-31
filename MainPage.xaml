@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CalcMaui.MainPage"
+             Title="标准" IsBusy="False">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="CalcButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#323232"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="Margin" Value="1"/>
+                <Setter Property="CornerRadius" Value="4"/>
+                <Style.Triggers>
+                    <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                        <Setter Property="BackgroundColor" Value="#282828" />
+                    </Trigger>
+                    
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+
+    <ScrollView>
+        <VerticalStackLayout BackgroundColor="#202020">
+            <Label x:Name="lbResult"
+                   FontSize="36"
+                   Text="计算结果" 
+                   HorizontalTextAlignment="End" Margin="0,0,16,0"
+                   />
+            <Label x:Name="lbExpression"
+                   FontSize="24"
+                   Text="计算表达式"
+                   HorizontalTextAlignment="End" Margin="0,0,16,0"/>
+            <Grid Padding="4" Margin="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="btn100Percent" Text="%" Clicked="btnSymbol_Clicked"
+                        Style="{StaticResource CalcButtonStyle}"
+                        Grid.Column="0" Grid.Row="0"/>
+                <Button x:Name="btnCE" Text="CE" Clicked="btnCE_Clicked"
+                        Style="{StaticResource CalcButtonStyle}"
+                        Grid.Column="1" Grid.Row="0"/>
+                <Button x:Name="btnC" Text="C"
+                        Style="{StaticResource CalcButtonStyle}"
+                        Grid.Column="2" Grid.Row="0"/>
+                <Button x:Name="btnDiv" Text="÷" Clicked="btnSymbol_Clicked" CommandParameter="/"
+                        Style="{StaticResource CalcButtonStyle}"
+                        Grid.Column="3" Grid.Row="0"/>
+                <Button x:Name="btn7" Text="7" Clicked="btnNumber_Clicked"
+                        Style="{StaticResource CalcButtonStyle}"
+                        BackgroundColor="#3B3B3B"
+                        Grid.Column="0" Grid.Row="1"/>
+                <Button x:Name="btn8" Text="8" Clicked="btnNumber_Clicked"
+                        Style="{StaticResource CalcButtonStyle}"
+                        BackgroundColor="#3B3B3B"
+                        Grid.Column="1" Grid.Row="1"/>
+                <Button x:Name="btn9" Text="9" Clicked="btnNumber_Clicked"
+                        Style="{StaticResource CalcButtonStyle}"
+                        BackgroundColor="#3B3B3B"
+                        Grid.Column="2" Grid.Row="1"/>
+                <Button x:Name="btnMul" Text="×" Clicked="btnSymbol_Clicked" CommandParameter="*"
+                        Style="{StaticResource CalcButtonStyle}"
+                        Grid.Column="3" Grid.Row="1"/>
+                <Button x:Name="btn4" Text="4" Clicked="btnNumber_Clicked"
+                        Style="{StaticResource CalcButtonStyle}"
+                        BackgroundColor="#3B3B3B"
+                        Grid.Column="0" Grid.Row="2"/>
+                <Button x:Name="btn5" Text="5" Clicked="btnNumber_Clicked"
+                        Style="{StaticResource CalcButtonStyle}"
+                        BackgroundColor="#3B3B3B"
+                        Grid.Column="1" Grid.Row="2"/>
+                <Button x:Name="btn6" Text="6" Clicked="btnNumber_Clicked"
+                        Style="{StaticResource CalcButtonStyle}"
+                        BackgroundColor="#3B3B3B"
+                        Grid.Column="2" Grid.Row="2"/>
+                <Button x:Name="btnSub" Text="-" Clicked="btnSymbol_Clicked"
+                        Style="{StaticResource CalcButtonStyle}"
+                        Grid.Column="3" Grid.Row="2"/>
+                <Button x:Name="btn1" Text="1" Clicked="btnNumber_Clicked"
+                        Style="{StaticResource CalcButtonStyle}"
+                        BackgroundColor="#3B3B3B"
+                        Grid.Column="0" Grid.Row="3"/>
+                <Button x:Name="btn2" Text="2" Clicked="btnNumber_Clicked"
+                        Style="{StaticResource CalcButtonStyle}"
+                        BackgroundColor="#3B3B3B"
+                        Grid.Column="1" Grid.Row="3"/>
+                <Button x:Name="btn3" Text="3" Clicked="btnNumber_Clicked"
+                        Style="{StaticResource CalcButtonStyle}"
+                        BackgroundColor="#3B3B3B"
+                        Grid.Column="2" Grid.Row="3"/>
+                <Button x:Name="btnAdd" Text="+" Clicked="btnSymbol_Clicked"
+                        Style="{StaticResource CalcButtonStyle}"
+                        Grid.Column="3" Grid.Row="3"/>
+                <Button x:Name="btnRevert" Text="+/-"
+                        Style="{StaticResource CalcButtonStyle}"
+                        BackgroundColor="#3B3B3B"
+                        Grid.Column="0" Grid.Row="4"/>
+                <Button x:Name="btn0" Text="0" Clicked="btnNumber_Clicked"
+                        Style="{StaticResource CalcButtonStyle}"
+                        BackgroundColor="#3B3B3B"
+                        Grid.Column="1" Grid.Row="4"/>
+                <Button x:Name="btnPoint" Text="." Clicked="btnNumber_Clicked"
+                        Style="{StaticResource CalcButtonStyle}"
+                        BackgroundColor="#3B3B3B"
+                        Grid.Column="2" Grid.Row="4"/>
+                <Button x:Name="btnRes" Text="=" Clicked="btnRes_Clicked"
+                        Style="{StaticResource CalcButtonStyle}"
+                        BackgroundColor="#787878"
+                        TextColor="#212121"
+                        Grid.Column="3" Grid.Row="4"/>
+
+
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
